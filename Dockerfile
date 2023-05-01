@@ -5,5 +5,6 @@ RUN CGO_ENABLED=0 go build -o ghnotify .
 
 FROM gcr.io/distroless/base
 COPY --from=build-go /src/ghnotify /ghnotify
+COPY examples/ /src/examples
 WORKDIR /
 ENTRYPOINT ["/ghnotify"]
