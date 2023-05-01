@@ -5,7 +5,7 @@ notify[msg] {
     input.event.action == "created"
 
     msg := {
-        "channel": "#alert",
+        "channel": "#for-integration-test",
         "text": "repository created",
     }
 }
@@ -15,7 +15,7 @@ notify[msg] {
     input.event.action == "deleted"
 
     msg := {
-        "channel": "#alert",
+        "channel": "#for-integration-test",
         "text": "repository created",
     }
 }
@@ -25,7 +25,7 @@ notify[msg] {
     input.event.action == "publicized"
 
     msg := {
-        "channel": "#alert",
+        "channel": "#for-integration-test",
         "text": "repository publicized",
     }
 }

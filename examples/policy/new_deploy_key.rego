@@ -4,7 +4,7 @@ notify[msg] {
     input.name == "deploy_key"
     input.event.action == "created"
     msg := {
-        "channel": "#alert",
+        "channel": "#for-integration-test",
         "text": "A new deploy key created",
         "fields": [
             {
