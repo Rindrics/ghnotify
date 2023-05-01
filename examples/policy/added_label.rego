@@ -6,7 +6,7 @@ notify[msg] {
     input.event.label.name == "breaking-change"
 
     msg := {
-        "channel": "#alert",
+        "channel": "#for-integration-test",
         "text": "A new breaking change PR",
     }
 }
