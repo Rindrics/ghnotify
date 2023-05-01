@@ -1,0 +1,14 @@
+version: '3'
+services:
+  ghnotify:
+    build: .
+    image: rindrics/ghnotify:latest
+    command: --local-policy /src/examples/policy/added_label.rego serve
+    env_file:
+      - .env
+    environment:
+      - GHNOTIFY_ADDR=0.0.0.0:80
+      - GHNOTIFY_WEBHOOK_SECRET=foobar
+      - GHNOTIFY_LOG_LEVEL=debug
+    ports:
+      - 4080:80
