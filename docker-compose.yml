@@ -1,8 +1,8 @@
 version: '3'
 services:
   ghnotify:
-    build: .
-    image: rindrics/ghnotify:latest
+    #build: .
+    image: ghcr.io/m-mizutani/ghnotify:v0.1.3 #rindrics/ghnotify:latest
     command:
       - --remote-url
       - http://opa_server:8181/v1/data/github/notify
