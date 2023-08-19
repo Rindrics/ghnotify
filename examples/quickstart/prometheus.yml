@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'ghnotify'
+    static_configs:
+      - targets: ['ghnotify:80']
+
+  - job_name: 'opa_server'
+    static_configs:
+      - targets: ['opa_server:8181']
+
+  - job_name: 'policy_server'
+    static_configs:
+      - targets: ['policy_server:80']
