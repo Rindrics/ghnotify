@@ -42,9 +42,28 @@ services:
       - ./bundle.tar.gz:/app/policies/bundle.tar.gz
       - ./nginx.conf:/etc/nginx/nginx.conf
     ports:
-      - 8080:80
+      - 5080:80
     networks:
       - my_network
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor
+    container_name: cadvisor
+    restart: always
+    privileged: true
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /var/lib/docker/:/var/lib/docker:ro
+      - /dev/disk/:/dev/disk:ro
+    ports:
+      - 8080:8080
+    networks:
+      - my_network
+    command:
+      - --docker_only
+      - --housekeeping_interval=5s
 
   prometheus:
     image: prom/prometheus:latest
