@@ -7,6 +7,7 @@ scrape_configs:
       - targets: ['ghnotify:80']
 
   - job_name: 'opa_server'
+    metrics_path: "/metrics"
     static_configs:
       - targets: ['opa_server:8181']
 
